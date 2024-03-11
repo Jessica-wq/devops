@@ -1,0 +1,235 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-new
+  namespace: devops
+  labels:
+    app: jenkins-new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-new
+  template:
+    metadata:
+      labels:
+        app: jenkins-new
+        aadpodidbinding: azure-pod-identity-binding-selector
+    spec:
+      #serviceAccountName: jenkins-admin
+      containers:
+      - name: jenkins
+        image: azuepvgoydvpsptacr.azurecr.io/jenkins-devops:1.1-jenkins-2.414.1
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: 800m
+          limits:
+            memory: 6Gi
+            cpu: 2
+        volumeMounts:
+          - name: jenkins-home
+            mountPath: "/var/jenkins_home"
+          - name: secrets-store-inline
+            mountPath: "/mnt/secrets-store"
+            readOnly: true
+        ports:
+            - name: http-port
+              containerPort: 8080
+              protocol: TCP
+            - name: jnlp-port
+              containerPort: 50000
+              protocol: TCP
+        env:
+        - name: BLOB_GOYA_QA_ACCOUNT_NAME
+          valueFrom:
+            secretKeyRef:
+              key: BLOB_GOYA_QA_ACCOUNT_NAME
+              name: blob-goya-secrets
+        - name: BLOB_GOYA_QA_ACCOUNT_KEY
+          valueFrom:
+            secretKeyRef:
+              key: BLOB_GOYA_QA_ACCOUNT_KEY
+              name: blob-goya-secrets
+        - name: BLOB_GOYA_PT_ACCOUNT_NAME
+          valueFrom:
+            secretKeyRef:
+              key: BLOB_GOYA_PT_ACCOUNT_NAME
+              name: blob-goya-secrets
+        - name: AD_GRAPH_GOY
+          valueFrom:
+            secretKeyRef:
+              key: AD_GRAPH_GOY
+              name: blob-goya-secrets
+        - name: LOGIN_MICROSOFT_GOY
+          valueFrom:
+            secretKeyRef:
+              key: LOGIN_MICROSOFT_GOY
+              name: blob-goya-secrets
+        - name: AD_TENANT_ID_GOY
+          valueFrom:
+            secretKeyRef:
+              key: AD_TENANT_ID_GOY
+              name: blob-goya-secrets
+        - name: URL_REDIRECCION_GOY_PT
+          valueFrom:
+            secretKeyRef:
+              key: URL_REDIRECCION_GOY_PT
+              name: blob-goya-secrets
+        - name: AD_CLIENT_ID_GOY
+          valueFrom:
+            secretKeyRef:
+              key: AD_CLIENT_ID_GOY
+              name: blob-goya-secrets
+        - name: SERVICE_URL_GOY_PT
+          valueFrom:
+            secretKeyRef:
+              key: SERVICE_URL_GOY_PT
+              name: blob-goya-secrets
+        - name: URL_STORAGE_ICON_GOY_PT
+          valueFrom:
+            secretKeyRef:
+              key: URL_STORAGE_ICON_GOY_PT
+              name: blob-goya-secrets
+        - name: URL_REDIRECCION_GOY_QA
+          valueFrom:
+            secretKeyRef:
+              key: URL_REDIRECCION_GOY_QA
+              name: blob-goya-secrets
+        - name: URL_STORAGE_ICON_GOY_QA
+          valueFrom:
+            secretKeyRef:
+              key: URL_STORAGE_ICON_GOY_QA
+              name: blob-goya-secrets
+        - name: SERVICE_URL_GOY_QA
+          valueFrom:
+            secretKeyRef:
+              key: SERVICE_URL_GOY_QA
+              name: blob-goya-secrets
+        - name: JENKINS_USER
+          valueFrom:
+            secretKeyRef:
+              key: JENKINS_USER
+              name: jenkins-auth-new
+        - name: JENKINS_PASS
+          valueFrom:
+            secretKeyRef:
+              key: JENKINS_PASS
+              name: jenkins-auth-new
+        - name: GIT_PASSWORD_AFP
+          valueFrom:
+            secretKeyRef:
+              key: GIT_PASSWORD_AFP
+              name: jenkins-auth-new
+        - name: GIT_PASSWORD_EMU
+          valueFrom:
+            secretKeyRef:
+              key: GIT_PASSWORD_EMU
+              name: jenkins-auth-new
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              key: AWS_SECRET_ACCESS_KEY
+              name: jenkins-auth-new
+        - name: AZ_LOGIN_PASSWORD_GOYA
+          valueFrom:
+            secretKeyRef:
+              key: AZ_LOGIN_PASSWORD_GOYA
+              name: jenkins-auth-new
+        - name: SONARQUBE_SECRET_TEXT
+          valueFrom:
+            secretKeyRef:
+              key: SONARQUBE_SECRET_TEXT
+              name: jenkins-auth-new
+        - name: ARTIFACTORY_CLOUD_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: ARTIFACTORY_CLOUD_PASSWORD
+              name: jenkins-auth-new
+        - name: ARTIFACTORY_DEVOPS_JENKINS
+          valueFrom:
+            secretKeyRef:
+              key: ARTIFACTORY_DEVOPS_JENKINS
+              name: jenkins-auth-new
+        - name: ARTIFACTORY_JENKINS_ONPREMISE
+          valueFrom:
+            secretKeyRef:
+              key: ARTIFACTORY_JENKINS_ONPREMISE
+              name: jenkins-auth-new
+        - name: GITHUB_TOKEN_SECRET_TEXT
+          valueFrom:
+            secretKeyRef:
+              key: GITHUB_TOKEN_SECRET_TEXT
+              name: jenkins-auth-new
+        - name: SONARQUBE_SECRET_TEXT2
+          valueFrom:
+            secretKeyRef:
+              key: SONARQUBE_SECRET_TEXT2
+              name: jenkins-auth-new
+        - name: AZ_SERVICE_PRINCIPAL_SECRET_TEXT
+          valueFrom:
+            secretKeyRef:
+              key: AZ_SERVICE_PRINCIPAL_SECRET_TEXT
+              name: jenkins-auth-new
+        - name: INFLUXDB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: INFLUXDB_PASSWORD
+              name: jenkins-auth-new
+        - name: FORTIFY_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: FORTIFY_TOKEN
+              name: jenkins-auth-new
+        - name: JENKINS_HOME
+          value: /var/jenkins_home
+        - name: JENKINS_OPTS
+          value: --prefix=/jenkins
+        - name: FORTIFY_TEMP_TOKEN_API
+          valueFrom:
+            secretKeyRef:
+              key: FORTIFY_TEMP_TOKEN_API
+              name: jenkins-auth-new
+        - name: FORTIFY_TOKEN_DOWNLOAD
+          valueFrom:
+            secretKeyRef:
+              key: FORTIFY_TOKEN_DOWNLOAD
+              name: jenkins-auth-new
+        - name: GOYA_STORAGE_KEY_QA
+          valueFrom:
+            secretKeyRef:
+              key: GOYA_STORAGE_KEY_QA
+              name: jenkins-auth-new
+        - name: GIT_PORV_DEVGITHUB
+          valueFrom:
+            secretKeyRef:
+              key: GIT_PORV_DEVGITHUB
+              name: jenkins-auth-new
+        - name: MULTIFONDOS_PASS
+          valueFrom:
+            secretKeyRef:
+              key: MULTIFONDOS_PASS
+              name: jenkins-auth-new
+        - name: JIRA_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: JIRA_TOKEN
+              name: jenkins-auth-new
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: jenkins-prod
+        - name: secrets-store-inline
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: azure-kv-provider
+      securityContext:
+        runAsUser: 0
+        fsGroup: 1000
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
