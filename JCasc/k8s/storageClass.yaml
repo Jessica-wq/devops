@@ -1,0 +1,14 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: azure-premium-custom
+  namespace: devops
+provisioner: file.csi.azure.com
+parameters:
+  skuName: Premium_LRS
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+mountOptions:
+  - mfsymlinks
+  - actimeo=30
