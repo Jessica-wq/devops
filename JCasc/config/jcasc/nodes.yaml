@@ -1,0 +1,693 @@
+jenkins:
+    clouds:
+    - kubernetes:
+        containerCap: 10
+        containerCapStr: "10"
+        jenkinsUrl: "http://jenkins-new/jenkins/"
+        name: "kubernetes"
+        namespace: "devops"
+        templates:
+        - label: "git"
+          name: "git"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "microservicios"
+          name: "microservicios"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:1.0.0-maven-3.9.0"
+            name: "maven"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9-eclipse-temurin-17-alpine"
+            name: "maven-17"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+            privileged: true
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/graalvm:21-mvn3.9.6"
+            name: "graalvm-21"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9.6-eclipse-temurin-11-alpine"
+            name: "maven-3-9-6"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "helm"
+          name: "helm"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/helm-alpine:alpine-3.17-azcli-2.43-helm-3.10"
+            name: "helm"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+        - label: "azcli"
+          name: "azcli-agent"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:2.43.0"
+            name: "azcli"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - name: "buildah"
+            image: "azuepvgoydvpsptacr.azurecr.io/buildah:1.2.0-buildah-1.27"
+            args: "9999999"
+            command: "sleep"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "npm"
+          name: "npm"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-npm-agent:npm-14"
+            name: "npm"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-6.6.1-jdk8"
+            name: "gradle"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9.1-jdk8"
+            name: "maven"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "api-management"
+          name: "api-management"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-api-management:1.1.0-jenkins-agent4.3-alpine"
+            name: "api-management"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "continous-testing-debian"
+          name: "continous-testing-debian"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-continoustesting-agent:1.0.0-jenkins-agent-debian-jdk8"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "fortify-sca"
+          name: "agent-fortify-centos7"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "fortify-sca-medium"
+          name: "agent-fortify-centos7"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            resourceRequestMemory: "1000Mi"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "continous-testing-agent"
+          name: "continous-testing"
+          namespace: "devops"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-continoustesting-agent:1.0.0-jenkins-agent-debian-jdk8"
+            name: "continous-testing-debian"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+        - label: "functions-azure-agent"
+          name: "functions-agent-jenkins"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/azure-function-mvn-agent:1.0.0"
+            name: "functions-agent"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - name: "azcli"
+            image: "azuepvgoydvpsptacr.azurecr.io/azcli:azure-function-2.0"
+            args: "9999999"
+            command: "sleep"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+        - label: "azcli-azure-agent"
+          name: "azcli-agent-jenkins"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli-agent"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+        - label: "angular-agent"
+          name: "angular-agent"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-npm:4.8-node15.5.0-alpine3.12"
+            name: "npm"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli-agent"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+        - label: "apimanage-agent"
+          name: "apimanage-agent-jenkins"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-api-management:1.1.0-jenkins-agent4.3-alpine"
+            name: "api-management"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+        - label: "npm-agent"
+          name: "npm-agent"
+          namespace: "devops"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-npm:4.8-node15.5.0-alpine3.12"
+            name: "npm"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "curl"
+          name: "curl"
+          namespace: "devops"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/curl-jq"
+            name: "curl-jq"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "terraform"
+          name: "terraform"
+          namespace: "devops"
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/terraform:1.2.8"
+            name: "terraform"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli-agent"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/ansible"
+            name: "ansible"
+            ttyEnabled: true
+            args: "999999"
+            command: "sleep"
+            workingDir: "/home/jenkins/agent"
+        - label: "awscli"
+          name: "awscli-agent"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/awscli:3.0"
+            name: "node"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/awscli"
+            name: "awscli"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "database-deploy"
+          name: "database-deploy"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - args: "9999999"
+            command: "sleep"
+            image: "liquibase/liquibase:4.18"
+            name: "liquibase"
+            runAsGroup: "1001"
+            runAsUser: "1001"
+            workingDir: "/home/jenkins/agent"
+          - args: "9999999"
+            command: "sleep"
+            image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            workingDir: "/home/jenkins/agent"
+          - args: "9999999"
+            command: "sleep"
+            image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            privileged: true
+            runAsGroup: "0"
+            runAsUser: "0"
+            workingDir: "/home/jenkins/agent"
+          id: "0a84cbd3-bd87-414e-ae92-1ca744d05497"
+          runAsGroup: "1001"
+          runAsUser: "1001"
+        - label: "ci-build"
+          name: "ci-build"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - name: "buildah"
+            image: "azuepvgoydvpsptacr.azurecr.io/buildah:1.2.0-buildah-1.27"
+            args: "9999999"
+            command: "sleep"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+        - label: "microfrontend"
+          name: "microfrontend"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-npm-agent:npm-14"
+            name: "npm"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "microservicios-java17"
+          name: "microservicios-java17"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9-eclipse-temurin-17-alpine"
+            name: "maven"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+            privileged: true
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/azcli:2.53-jdk17-mvn3.9"
+            name: "azcli-jdk17-mvn"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+        - label: "microservicios-java19"
+          name: "microservicios-java19"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9-eclipse-temurin-19-alpine"
+            name: "maven"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+            privileged: true
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "monolithic"
+          name: "monolithic"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:1.0.0-maven-3.9.0"
+            name: "maven"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+            privileged: true
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/ant:1.9.16-openjdk-7"
+            name: "ant7"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/ng:14.2.12-node-14.20"
+            name: "ng-npm"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/centos-telnet:1.0"
+            name: "centos7"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+        - label: "microfrontend-node20"
+          name: "microfrontend-node20"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/fortify:23.2.0-ubuntu18.04-2023.q4"
+            name: "fortify"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/trivy:1.0.0-trivy-0.38.0"
+            name: "trivy"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/node:20.10.0-alpine-npm-10.2.3"
+            name: "npm"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent-azcli:1.19.0-jenkins-agent4.3-alpine3.12"
+            name: "azcli"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+        - label: "building-node"
+          name: "building-node"
+          namespace: "devops"
+          yamlMergeStrategy: "override"
+          yaml: |-
+            metadata:
+                labels:
+                    aadpodidbinding: azure-pod-identity-binding-selector
+          containers:
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-agent:4.4-alpine"
+            name: "git"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+            privileged: true
+          - image: "azuepvgoydvpsptacr.azurecr.io/sonar-scanner-cli-agent:4.6"
+            name: "sonar"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-6.6.1-jdk8"
+            name: "gradle-portales"
+            privileged: true
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9.1-jdk8"
+            name: "maven-portales"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:1.0.0-maven-3.9.0"
+            name: "maven-11"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9-eclipse-temurin-17-alpine"
+            name: "maven-17"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/maven:3.9-eclipse-temurin-19-alpine"
+            name: "maven-19"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/jenkins-npm-agent:npm-14"
+            name: "nodejs-14"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/node:20-alpine-npm-10"
+            name: "nodejs-20"
+            ttyEnabled: true
+            workingDir: "/home/jenkins/agent"
+          - image: "azuepvgoydvpsptacr.azurecr.io/gradle:1.0.0-gradle-8.0.2"
+            name: "gradle-8"
+            ttyEnabled: true
+            privileged: true
+            workingDir: "/home/jenkins/agent"
+          
+    globalNodeProperties:
+    - envVars:
+        env:
+        - key: "FORTIFY_HOME"
+          value: "/opt/Fortify/Fortify_SCA_23.1.0"
