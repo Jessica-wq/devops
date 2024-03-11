@@ -1,0 +1,28 @@
+jobs:
+    - script: >
+        folder('JenkinsConfig') {
+            displayName('JenkinsConfig')
+            description('Folder to store Jenkins Configuration Jobs')
+        }
+
+        
+        pipelineJob('JenkinsConfig/devops-jenkins-jobs') {
+            displayName('devops-jenkins-jobs')
+            definition {
+                cpsScm {
+                    scm {
+                        git {
+                            branch('main')
+                            remote{
+                                credentials('github-emu')
+                                url('https://github.com/PorvenirEMU/devops-jenkins-jobs.git')
+                            }
+                        }
+                    }
+                    scriptPath('jenkinsConfig.groovy')
+                }
+            }
+            logRotator {
+                numToKeep(5)
+            }
+        }
