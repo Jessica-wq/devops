@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jenkins-new
+  name: jenkins-new
+  namespace: devops
+spec:
+  type: ClusterIP
+  ports:
+    - name: jenkins
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    - name: jnlpport
+      port: 50000
+      protocol: TCP
+      targetPort: 50000
+  selector:
+    app: jenkins-new
