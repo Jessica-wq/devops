@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-prod
+  namespace: devops
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: azure-premium-custom
+  resources:
+    requests:
+      storage: 100Gi
+
+  
