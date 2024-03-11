@@ -1,0 +1,1895 @@
+{
+    "goya":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ingress-goyapt",
+                    "nsIngress":"ingress-goyapt",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret":"ingress-goyapt",
+                    "userAssignedIdentityID": "a69d6054-5579-477c-99b8-025e7cef971d",
+                    "keyvaultName": "ZUE-PV-GOY-PT-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ingress-goyaqa",
+                    "nsIngress":"ingress-goyaqa",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ingress-goyaqa",
+                    "userAssignedIdentityID": "8808f0bd-82ca-4ac8-a09a-eb2f7545d0db",
+                    "keyvaultName": "ZUE-PV-GOY-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ingress-goyaprd",
+                    "nsIngress":"ingress-goyaprd",
+                    "domainIngress": "goya.porvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ingress-goyaprd",
+                    "userAssignedIdentityID": "e5c252be-c9b2-47da-bb89-35f49faac79d",
+                    "keyvaultName": "AZUE-PV-GOY-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "drp":
+                {
+                    "nsMicroservicios":"ingress-goyaprd",
+                    "nsIngress":"ingress-goyaprd",
+                    "domainIngress": "",
+                    "ipLoadBalancerIngress": "",
+                    "nsSecret":"ingress-goyaprd",
+                    "userAssignedIdentityID": "e5c252be-c9b2-47da-bb89-35f49faac79d",
+                    "keyvaultName": "AZUE2PORVGOYA-DR-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "mobile":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "drp":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.141.13.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "29d380d6-3d92-4e06-b5ba-5d3fd44eda13",
+                    "keyvaultName": "AZUE-PV-CEP-DR-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "canales-y-cognitive":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-obligatorias-cuentas",
+                    "nsIngress":"",
+                    "domainIngress": "",
+                    "ipLoadBalancerIngress": "",
+                    "nsSecret":"",
+                    "userAssignedIdentityID": "",
+                    "keyvaultName": "",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "comunidad-digital-comercial":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-ingress-pt",
+                    "nsIngress":"ns-ingress-pt",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-ingress-pt",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.144.200",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "secretTLS":"aks-ingress-cdcqa-tls"
+                }
+        },
+    "ns-obligatorias-general":
+        {
+            "develop":
+                {       
+                    "nsMicroservicios":"ns-obligatorias-general",                 
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-general",
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.144.200",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "secretTLS":"aks-ingress-cdcqa-tls"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-general",
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },
+    "ns-obligatorias-general-ca":
+        {
+            "develop":
+                {       
+                    "nsMicroservicios":"ns-obligatorias-general",                 
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-general",
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-general",
+                    "nsIngress":"ns-obligatorias-general",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-general",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },
+    "ns-obligatorias-afiliaciones":
+        {
+            "develop":
+                {       
+                    "nsMicroservicios":"ns-obligatorias-afiliaciones",                 
+                    "nsIngress":"ns-obligatorias-afiliaciones",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-afiliaciones",
+                    "nsIngress":"ns-obligatorias-afiliaciones",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.144.200",
+                    "nsSecret":"ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "secretTLS":"aks-ingress-cdcqa-tls"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-afiliaciones",
+                    "nsIngress":"ns-obligatorias-afiliaciones",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },    
+    "ns-obligatorias-afiliaciones-ca":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-obligatorias-afiliaciones",
+                    "nsIngress": "ns-obligatorias-afiliaciones",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-afiliaciones",
+                    "nsIngress":"ns-obligatorias-afiliaciones",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-afiliaciones",
+                    "nsIngress":"ns-obligatorias-afiliaciones",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },
+    "ns-obligatorias-comercial":
+        {
+            "develop":
+                {       
+                    "nsMicroservicios":"ns-obligatorias-comercial",                 
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-comercial",
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.144.200",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "secretTLS":"aks-ingress-cdcqa-tls"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-comercial",
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },
+    "ns-obligatorias-comercial-ca":
+        {
+            "develop":
+                {       
+                    "nsMicroservicios":"ns-obligatorias-comercial",                 
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-comercial",
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"   
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-comercial",
+                    "nsIngress":"ns-obligatorias-comercial",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-comercial",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+                }
+        },
+    "ns-transversal-seguridad":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-transversal-seguridad",
+                    "nsIngress":"ns-transversal-seguridad",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret":"ns-transversal-seguridad",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-seguridad",
+                    "nsIngress":"ns-transversal-seguridad",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-transversal-seguridad",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",  
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-transversal-seguridad",
+                    "nsIngress":"ns-transversal-seguridad",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-transversal-seguridad",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-transversal-externos":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-transversal-externos",
+                    "nsIngress": "ns-transversal-externos",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-transversal-externos",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-externos",
+                    "nsIngress":"ns-transversal-externos",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-transversal-externos",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-transversal-externos",
+                    "nsIngress":"ns-transversal-externos",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-transversal-externos",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+      "ns-transversal-externos-ca":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-transversal-externos",
+                    "nsIngress": "ns-transversal-externos",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-transversal-externos",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-externos",
+                    "nsIngress":"ns-transversal-externos",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-transversal-externos",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-transversal-externos",
+                    "nsIngress":"ns-transversal-externos",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-transversal-externos",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-transversal-orquestador":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-transversal-orquestador",
+                    "nsIngress": "ns-transversal-orquestador",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret": "ns-transversal-orquestador",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-orquestador",
+                    "nsIngress":"ns-transversal-orquestador",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-transversal-orquestador",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-transversal-orquestador",
+                    "nsIngress":"ns-transversal-orquestador",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-transversal-orquestador",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-transversal-identidad":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-transversal-identidad",
+                    "nsIngress": "ns-transversal-identidad",
+                    "domainIngress": "securepvycpt2.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.228.129.140",
+                    "nsSecret": "ns-transversal-identidad",
+                    "userAssignedIdentityID": "0f7339e9-8d6e-43ff-887f-132f5a8f596a",
+                    "keyvaultName": "AZ-EU-PV-PT-CE-PYC-KV",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-identidad",
+                    "nsIngress":"ns-transversal-identidad",
+                    "domainIngress": "securepvycqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.228.1.140",
+                    "nsSecret":"ns-transversal-identidad",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "AZ-EU-PV-QA-CE-PYC-KV",
+                    "tenantId":"bb1b8e9c-d181-4958-a337-441b0d2393a2"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-transversal-identidad",
+                    "nsIngress":"ns-transversal-identidad",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-transversal-identidad",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-backendforfront-zta":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-backendforfront-zta",
+                    "nsIngress":"ns-backendforfront-zta",                  
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret":"ns-backendforfront-zta",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-backendforfront-zta",
+                    "nsIngress":"ns-backendforfront-zta",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-backendforfront-zta",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-backendforfront-zta",
+                    "nsIngress":"ns-backendforfront-zta",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-backendforfront-zta",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "aks-obligatorias":
+        {
+            "develop":
+                {
+                    "domainDashboard": "secureapicdcpt.afpporvenir.com"
+                },
+            "release":
+                {
+                    "domainDashboard": "secureapicdcqa.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "secureapicdcprd.afpporvenir.com"
+                }
+        },
+      "aks-obligatorias-plan-c":
+        {
+            "develop":
+                {
+                    "domainDashboard": "securepopt.afpporvenir.com"
+                },
+            "release":
+                {
+                    "domainDashboard": "securepoqa.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "securepoprd.afpporvenir.com"
+                }
+        },
+    "aks-microfrontend":
+        {
+            "develop":
+                {                        
+                    "domainDashboard": "securemfept.afpporvenir.com"
+                },
+            "release":
+                {
+                    "domainDashboard": "securemfeqa.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "securemfe.afpporvenir.com"
+                }
+        },
+    "aks-cesantias-voluntarias":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-voluntarias-cuentas",                  
+                    "domainDashboard": "securepvycpt2.afpporvenir.com"
+                },
+            "release":
+                {
+                    "nsMicroservicios": "ns-voluntarias-cuentas",
+                    "domainDashboard": "securepvycqa.afpporvenir.com"
+                },
+            "main":
+                {
+                    "nsMicroservicios": "ns-voluntarias-cuentas",
+                    "domainDashboard": "securepvyprod.afpporvenir.com"
+                }
+        },
+    "aks-pdf":
+        {
+            "develop":
+                {                        
+                    "domainDashboard": "securepdfpt.afpporvenir.com"
+                },
+            "release":
+                {
+                    "domainDashboard": "securepdfqa.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "securepdf.afpporvenir.com"
+                }
+        },
+    "aks-canales-electronicos":
+        {
+            "develop":
+                {                        
+                    "domainDashboard": "secureptcep.afpporvenir.com "
+                },
+            "release":
+                {
+                    "domainDashboard": "secureqacep.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "securemobile.afpporvenir.com"
+                }
+        },
+    "siebel":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "8892128b-819b-49af-9413-c9d44b9954ce",
+                    "keyvaultName": "",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ingress-po",
+                    "nsIngress":"ingress-po",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ingress-po",
+                    "userAssignedIdentityID": "e9bc6b14-6389-45ba-a599-d586b9e4d5d1",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01 ",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "aks-goya":
+        {
+            "develop":
+                {
+                    "domainDashboard": "secureptgoy.afpporvenir.com"
+                },
+            "release":
+                {
+                    "domainDashboard": "secureqagoy.afpporvenir.com"
+                },
+            "main":
+                {
+                    "domainDashboard": "securegoya.afpporvenir.com"
+                }
+        },
+    "ns-obligatorias-historialaboral":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-obligatorias-historialaboral",
+                    "nsIngress":"ns-obligatorias-historialaboral",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-historialaboral",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937",
+                    "secretTLS":"aks-ingress-cdcpt-tls"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-historialaboral",
+                    "nsIngress":"ns-obligatorias-historialaboral",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-obligatorias-historialaboral",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-historialaboral",
+                    "nsIngress":"ns-obligatorias-historialaboral",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-historialaboral",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-obligatorias-cuentas":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-obligatorias-cuentas",
+                    "nsIngress":"ns-obligatorias-cuentas",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "nsSecret":"ns-obligatorias-cuentas",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-obligatorias-cuentas",
+                    "nsIngress":"ns-obligatorias-cuentas",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-obligatorias-cuentas",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-obligatorias-cuentas",
+                    "nsIngress":"ns-obligatorias-cuentas",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-obligatorias-cuentas",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-cesantias-cuentas":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-cesantias-cuentas",
+                    "nsIngress": "ns-cesantias-cuentas",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret": "ns-cesantias-cuentas",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-cesantias-cuentas",
+                    "nsIngress":"ns-cesantias-cuentas",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-cesantias-cuentas",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-cesantias-cuentas",
+                    "nsIngress":"ns-cesantias-cuentas",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-cesantias-cuentas",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-voluntarias-cuentas":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-voluntarias-cuentas",
+                    "nsIngress":"ns-voluntarias-cuentas",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret":"ns-voluntarias-cuentas",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-voluntarias-cuentas",
+                    "nsIngress":"ns-voluntarias-cuentas",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-voluntarias-cuentas",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-voluntarias-cuentas",
+                    "nsIngress":"ns-voluntarias-cuentas",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-voluntarias-cuentas",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-backendforfront-canales":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-backendforfront-canales",
+                    "nsIngress":"ns-backendforfront-canales",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret":"ns-backendforfront-canales",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-backendforfront-canales",
+                    "nsIngress":"ns-backendforfront-canales",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-backendforfront-canales",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "AZUE-PV-CEP-QA-AKS-01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-backendforfront-canales",
+                    "nsIngress":"ns-backendforfront-canales",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-backendforfront-canales",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+	"ns-backendforfront-historialaboral":
+        {	
+			"develop":
+                {
+                    "nsMicroservicios":"ns-backendforfront-historialaboral",
+                    "nsIngress":"ns-backendforfront-historialaboral",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret":"ns-backendforfront-historialaboral",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-backendforfront-historialaboral",
+                    "nsIngress":"ns-backendforfront-historialaboral",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-backendforfront-historialaboral",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-backendforfront-historialaboral",
+                    "nsIngress":"ns-backendforfront-historialaboral",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-backendforfront-historialaboral",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-frontend-historialaboral":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-frontend-historialaboral",
+                    "nsIngress":"ns-frontend-historialaboral",
+                    "domainIngress": "securemfept.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.176.62",
+                    "nsSecret":"ns-frontend-historialaboral",
+                    "userAssignedIdentityID": "cb667e30-f077-4d1b-9bbe-cc7b1a2b80d8",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-historialaboral",
+                    "nsIngress":"ns-frontend-historialaboral",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-frontend-historialaboral",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-frontend-historialaboral",
+                    "nsIngress":"ns-frontend-historialaboral",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-frontend-historialaboral",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-clientes-orquestador":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-clientes-orquestador",
+                    "nsIngress":"ns-clientes-orquestador",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "nsSecret":"ns-clientes-orquestador",
+                    "ipLoadBalancerIngress": "10.224.128.200",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios": "ns-clientes-orquestador",
+                    "nsIngress":"ns-clientes-orquestador",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "nsSecret":"ns-clientes-orquestador",
+                    "ipLoadBalancerIngress": "10.224.144.200",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios": "ns-clientes-orquestador",
+                    "nsIngress":"ns-clientes-orquestador",
+                    "domainIngress": "",
+                    "nsSecret":"ns-clientes-orquestador",
+                    "ipLoadBalancerIngress": "",
+                    "userAssignedIdentityID": "",
+                    "keyvaultName": "",
+                    "tenantId":""
+                }
+        },
+    "ns-frontend-comerciales":
+        {
+            "develop":
+                {
+                    "nsMicroservicios":"ns-frontend-comerciales",
+                    "nsIngress":"ns-frontend-comerciales",
+                    "domainIngress": "securemfept.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.176.62",
+                    "nsSecret":"ns-frontend-comerciales",
+                    "userAssignedIdentityID": "cb667e30-f077-4d1b-9bbe-cc7b1a2b80d8",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-comerciales",
+                    "nsIngress":"ns-frontend-comerciales",
+                    "domainIngress": "securemfeqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "",
+                    "nsSecret":"ns-frontend-comerciales",
+                    "userAssignedIdentityID": "",
+                    "keyvaultName": "",
+                    "tenantId":""
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-frontend-comerciales",
+                    "nsIngress":"ns-frontend-comerciales",
+                    "domainIngress": "",
+                    "ipLoadBalancerIngress": "",
+                    "nsSecret":"ns-frontend-comerciales",
+                    "userAssignedIdentityID": "",
+                    "keyvaultName": "",
+                    "tenantId":""
+                }
+        },
+    "ns-obligatorias-recaudo":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-obligatorias-recaudo",
+                "nsIngress": "ns-obligatorias-recaudo",
+                "domainIngress": "secureapicdcpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.128.200",
+                "nsSecret": "ns-obligatorias-recaudo",
+                "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-obligatorias-pensiones":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-obligatorias-pensiones",
+                "nsIngress": "ns-obligatorias-pensiones",
+                "domainIngress": "secureapicdcpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.128.200",
+                "nsSecret": "ns-obligatorias-pensiones",
+                "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-cesantias-afiliaciones":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-cesantias-afiliaciones",
+                "nsIngress": "ns-cesantias-afiliaciones",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-cesantias-afiliaciones",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-cesantias-recaudo":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-cesantias-recaudo",
+                "nsIngress": "ns-cesantias-recaudo",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-cesantias-recaudo",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-cesantias-retiros":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-cesantias-retiros",
+                "nsIngress": "ns-cesantias-retiros",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-cesantias-retiros",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1", 
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+            {
+                "nsMicroservicios":"ns-cesantias-retiros",
+                "nsIngress":"ns-cesantias-retiros",
+                "domainIngress": "secureqacep.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.160.158.100",
+                "nsSecret":"ns-cesantias-retiros",
+                "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-cesantias-retiros",
+                "nsIngress":"ns-cesantias-retiros",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-cesantias-retiros",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+            }
+        },
+    "ns-cesantias-general":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-cesantias-general",
+                "nsIngress": "ns-cesantias-general",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-cesantias-general",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-voluntarias-afiliaciones":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-voluntarias-afiliaciones",
+                "nsIngress": "ns-voluntarias-afiliaciones",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-voluntarias-afiliaciones",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-voluntarias-recaudo":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-voluntarias-recaudo",
+                "nsIngress": "ns-voluntarias-recaudo",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-voluntarias-recaudo",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-voluntarias-retiros":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-voluntarias-retiros",
+                "nsIngress": "ns-voluntarias-retiros",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-voluntarias-retiros",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-voluntarias-transferencias":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-voluntarias-transferencias",
+                "nsIngress": "ns-voluntarias-transferencias",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-voluntarias-transferencias",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                 "nsMicroservicios": "ns-voluntarias-transferencias",
+                  "nsIngress": "ns-voluntarias-transferencias",
+                  "domainIngress": "secureqacep.afpporvenir.com",
+                  "ipLoadBalancerIngress": "10.160.158.100",
+                  "nsSecret": "ns-voluntarias-transferencias",
+                  "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                  "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                  "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-clientes-datosclientes-cdc":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-clientes-datosclientes",
+                "nsIngress": "ns-clientes-datosclientes",
+                "domainIngress": "secureapicdcpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.128.200",
+                "nsSecret": "ns-clientes-datosclientes",
+                "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+            {
+                "nsMicroservicios":"ns-clientes-datosclientes",
+                "nsIngress":"ns-clientes-datosclientes",
+                "domainIngress": "secureapicdcqa.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.144.200",
+                "nsSecret":"ns-clientes-datosclientes",
+                "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"   
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-clientes-datosclientes",
+                "nsIngress":"ns-clientes-datosclientes",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-clientes-datosclientes",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+    "ns-clientes-datosclientes":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-clientes-datosclientes",
+                "nsIngress": "ns-clientes-datosclientes",
+                "domainIngress": "secureapicdcpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.128.200",
+                "nsSecret": "ns-clientes-datosclientes",
+                "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+            {
+                "nsMicroservicios":"ns-clientes-datosclientes",
+                "nsIngress":"ns-clientes-datosclientes",
+                "domainIngress": "secureqacep.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.160.158.100",
+                "nsSecret":"ns-clientes-datosclientes",
+                "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"   
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-clientes-datosclientes",
+                "nsIngress":"ns-clientes-datosclientes",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-clientes-datosclientes",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+    "ns-transversal-logs":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-transversal-logs",
+                "nsIngress": "ns-transversal-logs",
+                "domainIngress": "secureapicdcpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.124.128.200",
+                "nsSecret": "ns-transversal-logs",
+                "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1", 
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+            {
+                "nsMicroservicios":"ns-transversal-logs",
+                "nsIngress":"ns-transversal-logs",
+                "domainIngress": "secureapicdcqa.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.124.144.200",
+                "nsSecret":"ns-transversal-logs",
+                "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-transversal-logs",
+                "nsIngress":"ns-transversal-logs",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-transversal-logs",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+        "ns-transversal-logs-ca":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-transversal-logs",
+                    "nsIngress": "ns-transversal-logs",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-transversal-logs",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-transversal-logs",
+                    "nsIngress":"ns-transversal-logs",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-transversal-logs",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-transversal-logs",
+                "nsIngress":"ns-transversal-logs",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-transversal-logs",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+    "ns-frontend-zta":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-frontend-zta",
+                "nsIngress": "ns-frontend-zta",
+                "domainIngress": "securemfept.afpporvenir.com ",
+                "ipLoadBalancerIngress": "10.224.176.62",
+                "nsSecret": "ns-frontend-zta",
+                "userAssignedIdentityID": "cb667e30-f077-4d1b-9bbe-cc7b1a2b80d8",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-zta",
+                    "nsIngress":"ns-frontend-zta",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-frontend-zta",
+                    "userAssignedIdentityID": "691724f1-6961-404b-b5a6-512504ff5299",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "main":
+                {
+                    "nsMicroservicios":"ns-frontend-zta",
+                    "nsIngress":"ns-frontend-zta",
+                    "domainIngress": "securemobile.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.35.140.100",
+                    "nsSecret":"ns-frontend-zta",
+                    "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                    "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                }
+        },
+    "ns-frontend-zte":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-frontend-zte",
+                "nsIngress": "ns-frontend-zte",
+                "domainIngress": "securemfept.afpporvenir.com ",
+                "ipLoadBalancerIngress": "10.224.176.62",
+                "nsSecret": "ns-frontend-zte",
+                "userAssignedIdentityID": "cb667e30-f077-4d1b-9bbe-cc7b1a2b80d8",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-frontend-tranonclinck":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-frontend-tranonclinck",
+                "nsIngress": "ns-frontend-tranonclinck",
+                "domainIngress": "securemfept.afpporvenir.com ",
+                "ipLoadBalancerIngress": "10.224.176.62",
+                "nsSecret": "ns-frontend-tranonclinck",
+                "userAssignedIdentityID": "cb667e30-f077-4d1b-9bbe-cc7b1a2b80d8",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+    "ns-backendforfront-zte":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-backendforfront-zte",
+                "nsIngress": "ns-backendforfront-zte",
+                "domainIngress": "securepvycpt.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.224.140.84",
+                "nsSecret": "ns-backendforfront-zte",
+                "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+                {
+                    
+                },
+            "main":
+                {
+                    
+                }
+        },
+        "ns-backendforfront-tranonclinck":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-backendforfront-tranonclinck",
+                    "nsIngress": "ns-backendforfront-tranonclinck",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret": "ns-backendforfront-tranonclinck",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                       
+                    }
+            },
+        "ns-backendforfront-comerciales":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-backendforfront-comerciales",
+                    "nsIngress": "ns-backendforfront-comerciales",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret": "ns-backendforfront-comerciales",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-informes-obligatorias":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-informes-obligatorias",
+                    "nsIngress": "ns-informes-obligatorias",
+                    "domainIngress": "securepdfpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10224132200",
+                    "nsSecret": "ns-informes-obligatorias",
+                    "userAssignedIdentityID": "ceeb325a-77ce-4774-9b50-5b53cc42d9b4",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-informes-cesantias":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-informes-cesantias",
+                    "nsIngress": "ns-informes-cesantias",
+                    "domainIngress": "securepdfpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10224132200",
+                    "nsSecret": "ns-informes-cesantias",
+                    "userAssignedIdentityID": "ceeb325a-77ce-4774-9b50-5b53cc42d9b4",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-informes-voluntarias":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-informes-voluntarias",
+                    "nsIngress": "ns-informes-voluntarias",
+                    "domainIngress": "securepdfpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10224132200",
+                    "nsSecret": "ns-informes-voluntarias",
+                    "userAssignedIdentityID": "ceeb325a-77ce-4774-9b50-5b53cc42d9b4",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-informes-clientes":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-informes-clientes",
+                    "nsIngress": "ns-informes-clientes",
+                    "domainIngress": "securepdfpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10224132200",
+                    "nsSecret": "ns-informes-clientes",
+                    "userAssignedIdentityID": "ceeb325a-77ce-4774-9b50-5b53cc42d9b4",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-voluntarias-general":
+            {
+                "develop":
+                {
+                    "nsMicroservicios": "ns-voluntarias-general",
+                    "nsIngress": "ns-voluntarias-general",
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "nsSecret": "ns-voluntarias-general",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+                "release":
+                    {
+                        
+                    },
+                "main":
+                    {
+                        
+                    }
+            },
+        "ns-cesantias-saldos":
+        {
+            "develop":
+                {      
+                    "nsMicroservicios": "ns-cesantias-saldos",
+                    "nsIngress":"ns-cesantias-saldos",                  
+                    "domainIngress": "securepvycpt.afpporvenir.com",
+                    "nsSecret":"ns-cesantias-saldos",
+                    "ipLoadBalancerIngress": "10.224.140.84",
+                    "userAssignedIdentityID": "b09894e0-106b-42f5-acb5-bbd44da3f6fc",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios": "ns-cesantias-saldos",
+                    "nsIngress":"ns-cesantias-saldos",
+                    "domainIngress": "securepvycqa.afpporvenir.com",
+                    "nsSecret":"ns-cesantias-saldos"
+                },
+            "main":
+                {
+                    "nsMicroservicios": "ns-cesantias-saldos",
+                    "nsIngress":"ns-cesantias-saldos",
+                    "domainIngress": "securepvyprod.afpporvenir.com",
+                    "nsSecret":"ns-cesantias-saldos"
+                }
+        },
+        "ns-frontend-obligatorias-afiliaciones":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-frontend-obligatorias-afiliaciones",
+                    "nsIngress": "ns-frontend-obligatorias-afiliaciones",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-frontend-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-obligatorias-afiliaciones",
+                    "nsIngress":"ns-frontend-obligatorias-afiliaciones",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-frontend-obligatorias-afiliaciones",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-frontend-obligatorias-afiliaciones",
+                "nsIngress":"ns-frontend-obligatorias-afiliaciones",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-frontend-obligatorias-afiliaciones",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+        "ns-frontend-obligatorias-comercial-cdc":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-frontend-obligatorias-comercial",
+                    "nsIngress": "ns-frontend-obligatorias-comercial",
+                    "domainIngress": "secureapicdcpt.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.124.128.200",
+                    "nsSecret": "ns-frontend-obligatorias-comercial",
+                    "userAssignedIdentityID": "beb69153-6ba4-44ea-8e00-447643dd5991",
+                    "keyvaultName": "AZUE-PV-CDC-PT-KV1", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-obligatorias-comercial",
+                    "nsIngress":"ns-frontend-obligatorias-comercial",
+                    "domainIngress": "secureapicdcqa.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.124.144.200",
+                    "nsSecret":"ns-frontend-obligatorias-comercial",
+                    "userAssignedIdentityID": "b957ce7b-2be2-4ced-a3ee-f1afeb3edffa",
+                    "keyvaultName": "AZUE-PV-CDC-QA-KV1",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-frontend-obligatorias-comercial",
+                "nsIngress":"ns-frontend-obligatorias-comercial",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-frontend-obligatorias-comercial",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+        "ns-frontend-obligatorias-comercial":
+        {
+            "develop":
+                {
+                    "nsMicroservicios": "ns-frontend-obligatorias-comercial",
+                    "nsIngress": "ns-frontend-obligatorias-comercial",
+                    "domainIngress": "secureptcep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.152.100",
+                    "nsSecret": "ns-frontend-obligatorias-comercial",
+                    "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                    "keyvaultName": "ZUE-PV-CEP-PT-KV", 
+                    "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+                },
+            "release":
+                {
+                    "nsMicroservicios":"ns-frontend-obligatorias-comercial",
+                    "nsIngress":"ns-frontend-obligatorias-comercial",
+                    "domainIngress": "secureqacep.afpporvenir.com",
+                    "ipLoadBalancerIngress": "10.160.158.100",
+                    "nsSecret":"ns-frontend-obligatorias-comercial",
+                    "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                    "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                    "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-frontend-obligatorias-comercial",
+                "nsIngress":"ns-frontend-obligatorias-comercial",
+                "domainIngress": "securemobile.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.35.140.100",
+                "nsSecret":"ns-frontend-obligatorias-comercial",
+                "userAssignedIdentityID": "b6ac4e3b-e08f-4ada-8790-8bd5070dcd75",
+                "keyvaultName": "AZUE-PV-CEP-PRD-KV01",
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"  
+            }
+        },
+        "ns-frontend-pendigital":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-frontend-pendigital",
+                "nsIngress": "ns-frontend-pendigital",
+                "domainIngress": "secureptcep.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.160.152.100",
+                "nsSecret": "ns-frontend-pendigital",
+                "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                "keyvaultName": "ZUE-PV-CEP-PT-KV", 
+                "tenantId": "10a76712-94f6-46a2-9155-31bd8b76f937"
+            },
+            "release":
+            {
+                "nsMicroservicios":"ns-frontend-pendigital",
+                "nsIngress":"ns-frontend-pendigital",
+                "domainIngress": "secureqacep.afpporvenir.com",
+                "ipLoadBalancerIngress": "10.160.158.100",
+                "nsSecret":"ns-frontend-pendigital",
+                "userAssignedIdentityID": "468d907a-5ffb-4ad0-9eb8-65dfaedd1240",
+                "keyvaultName": "ZUE-PV-CEP-QA-KV",
+                "tenantId":"10a76712-94f6-46a2-9155-31bd8b76f937"  
+            },
+            "main":
+            {
+                "nsMicroservicios":"ns-frontend-pendigital",
+                "nsIngress":"ns-frontend-pendigital",
+                "domainIngress": "",
+                "ipLoadBalancerIngress": "",
+                "nsSecret":"ns-frontend-pendigital",
+                "userAssignedIdentityID": "",
+                "keyvaultName": "",
+                "tenantId": ""
+            }
+        },
+        "ns-embargos":
+        {
+            "develop":
+            {
+                "nsMicroservicios": "ns-embargos",
+                "nsIngress": "ns-embargos",
+                "domainIngress": "aksemb.afpporvenir.com/aks",
+                "ipLoadBalancerIngress": "",
+                "nsSecret": "ns-embargos",
+                "userAssignedIdentityID": "5c639cfc-d2e2-4c1c-ad85-4f5fa4bdcfc0",
+                "keyvaultName": "", 
+                "tenantId": "cd403a65-991b-4445-ab10-3960197144c1"
+            },
+            "release":
+            {
+                "nsMicroservicios":"",
+                "nsIngress":"",
+                "domainIngress": "",
+                "ipLoadBalancerIngress": "",
+                "nsSecret":"",
+                "userAssignedIdentityID": "",
+                "keyvaultName": "",
+                "tenantId": ""
+            },
+            "main":
+            {
+                "nsMicroservicios":"",
+                "nsIngress":"",
+                "domainIngress": "",
+                "ipLoadBalancerIngress": "",
+                "nsSecret":"",
+                "userAssignedIdentityID": "",
+                "keyvaultName": "",
+                "tenantId": ""
+            }
+        }
+}
