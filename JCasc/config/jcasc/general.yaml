@@ -1,0 +1,111 @@
+jenkins:
+    systemMessage: "Jenkins de porvenir configurado por Jcasc"
+    numExecutors: 0
+    scmCheckoutRetryCount: 2
+    mode: NORMAL
+    slaveAgentPort: 50000
+    securityRealm:
+      local:
+        allowsSignup: false
+        users:
+         - id: ${JENKINS_USER}
+           password: ${JENKINS_PASS}
+ 
+    authorizationStrategy:
+      globalMatrix:
+        permissions:
+          - "Overall/Administer:admin"
+security:
+    scriptApproval:
+        approvedSignatures:
+            - "method io.jenkins.plugins.casc.ConfigurationAsCode configure"
+            - "staticMethod io.jenkins.plugins.casc.ConfigurationAsCode get"
+            - "method groovy.lang.GroovyObject invokeMethod java.lang.String java.lang.Object"
+            - "method hudson.model.Cause$UserIdCause getUserId"
+            - "method hudson.model.Run getCause java.lang.Class"
+            - "method java.util.Dictionary get java.lang.Object"
+            - "method org.jenkinsci.plugins.workflow.support.steps.build.RunWrapper getRawBuild"
+unclassified:
+  artifactorybuilder:
+    useCredentialsPlugin: true
+    jfrogInstances:
+      - instanceId: Artifactory
+        platformUrl: http://devops.porvenir.com
+        artifactoryUrl: http://devops.porvenir.com/artifactory
+        distributionUrl: http://devops.porvenir.com/distribution
+        deployerCredentialsConfig:
+          credentialsId: "artifactory-devops-jenkins"
+      - instanceId: ArtifactoryOnPremise
+        platformUrl: http://10.33.160.12:9090
+        artifactoryUrl: http://10.33.160.12:9090/artifactory
+        distributionUrl: http://10.33.160.12:9090/distribution
+        deployerCredentialsConfig:
+          credentialsId: "artifactory-onpremise"
+  globalLibraries:
+      libraries:
+          - defaultVersion: "feature/pipelinePiloto"
+            name: "shared-library-goya"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                    credentialsId: "git-credentials-goya"
+                    id: "shared-library-goya"
+                    remote: "https://github.com/PorvenirAFP/devops-jenkins-shared-libraries-goya.git"
+                    traits:
+                    - "gitBranchDiscovery"
+          - defaultVersion: "feature/seedJob"
+            name: "shared-library-mobilecanales"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                    credentialsId: "git-credentials-goya"
+                    id: "shared-library-mobilecanales"
+                    remote: "https://github.com/PorvenirAFP/devops-jenkins-shared-libraries-mobilecanales.git"
+                    traits:
+                    - "gitBranchDiscovery"
+          - defaultVersion: "feature/pipelinePiloto"
+            name: "shared-library-multifondos"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                    credentialsId: "git-credentials-goya"
+                    id: "shared-library-multifondos"
+                    remote: "https://github.com/PorvenirAFP/devops-jenkins-shared-libraries-multifondos.git"
+                    traits:
+                    - "gitBranchDiscovery"
+          - defaultVersion: "feature/pipelinePiloto"
+            name: "shared-library-comunidadDigitalComercial"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                      credentialsId: "git-credentials-goya"
+                      id: "shared-library-comunidadDigitalComercial"
+                      remote: "https://github.com/PorvenirAFP/devops-jenkins-shared-comunidadDigitalComercial.git"
+                      traits:
+                      - "gitBranchDiscovery"
+          - defaultVersion: "develop"
+            name: "shared-library-portales"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                    credentialsId: "git-credentials-goya"
+                    id: "shared-library-portales"
+                    remote: "https://github.com/PorvenirAFP/devops-jenkins-shared-libraries-portales.git"
+                    traits:
+                    - "gitBranchDiscovery"
+          - defaultVersion: "main"
+            name: "jenkins-shared-library"
+            retriever:
+              modernSCM:
+                scm:
+                  git:
+                    credentialsId: "github-emu"
+                    id: "jenkins-shared-library"
+                    remote: "https://github.com/PorvenirEMU/devops-jenkins-shared-library.git"
+                    traits:
+                    - "gitBranchDiscovery"
