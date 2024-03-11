@@ -1,0 +1,191 @@
+
+sleep(1800)
+sudo su - root
+az aks list
+az aks list | jq '.[]|select(.addonProfiles.azureKeyvaultSecretsProvider.config.enableSecretRotation=="true")|"\(.name) ----  \(.addonProfiles.azureKeyvaultSecretsProvider.config.rotationPollInterval)"'
+az aks show -n AZUE-PV-CDC-PT-AKS-01 -g PORV-PT-RG-CANALES-ELECTRONICOS --query "addonProfiles.azureKeyvaultSecretsProvider.identity.clientId" -o tsv
+
+sh "ls -ltra"
+sh "cat Dockerfile"
+sh "img -v"
+sh """
+	pwd
+	ls -ltr
+	rm ./src/components/ConsultaSiaf/ConsultaSiaf.test.js
+	rm ./src/components/EstadoAfiliacion/estadoAfiliacion.test.js
+	rm ./src/components/HistorialConsultaSiafp/HistorialConsultaSiafp.test.js
+	rm ./src/components/Layout/Aside/Aside.test.js
+	rm ./src/components/Utilities/InputError/index.test.js
+"""
+sh "whoami"
+sh "ls -lt"
+error("Prueba")
+
+
+kubectl exec -it microfrontend-node20-thcbq -n devops -c sonar sh
+kubectl exec -it microservicios-wj0d3 -n devops -c maven sh
+kubectl exec -it microfrontend-node20-t5qm3 -n devops -c npm sh
+kubectl exec -it microfrontend-rhcjv -n devops -c gradle sh
+kubectl exec -it azcli-agent-4ncg0 -n devops -c azcli sh
+kubectl exec -it microservicios-java17-b9vsg -n devops -c fortify sh
+
+
+
+
+kubectl get pods -n devops
+
+kubectl run npmprueba -it --image azuepvgoydvpsptacr.azurecr.io/jenkins-npm-agent:npm-14 -n devops -- bash
+kubectl run forifyprueba -it --image azuepvgoydvpsptacr.azurecr.io/sca-fortify-agent:2.1-centos7 -n devops -- bash
+
+kubectl delete pod npmprueba -n devops
+
+kubectl exec -it fortifyprueba bash -n devops
+
+sh"kubectl delete deployment 'onb-webapp-afiliaciones-react-deployment' -n ns-ingress-pt"
+
+sh"kubectl logs onb-ms-cartera-asignada-java-java-deployment -n ns-ingress-pt"
+
+sh"kubectl delete pod obl-his-ms-detalle-semanas-azr-java-deployment-54bd76bd98-rczjv --grace-period=0 --force -n ns-obligatorias-historialaboral"
+
+
+Token EMU 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
+
+
+sh 'mv .git/ git'          
+stash name: 'BuildArtifacts', includes: "build/**/*.jar, target/*, Dockerfile, k8s/**/*, **/git/**"
+
+unstash name: 'BuildArtifacts'
+sh 'mv git .git'
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Pruebas Fortify
+
+Ejecutamos los comandos donde se encuentra el codigo a analizar
+/opt/Fortify/Fortify_SCA_and_Apps_20.2.0/bin/sourceanalyzer -Dcom.fortify.sca.ProjectRoot=./ -clean -b code
+/opt/Fortify/Fortify_SCA_and_Apps_20.2.0/bin/sourceanalyzer -Dcom.fortify.sca.ProjectRoot=./ -b code -source 11 src/**/*.js
+/opt/Fortify/Fortify_SCA_and_Apps_20.2.0/bin/sourceanalyzer -Dcom.fortify.sca.ProjectRoot=./ -b code -scan -f code.fpr
+
+
+Creamos el archivo ScriptPrueba.sh y corregimos la sintaxis de las rutas erroneas
+vi ScriptPrueba.sh
+
+Posteriormente ejecutamos el ScriptPrueba.sh creado para validar el informe generado en el code.fpr
+bash ScriptPrueba.sh /home/jenkins/borrar/hdv-webapp-asesores-react/code.fpr
+
+
+Para copiar la carpeta borrar desde el local al pod forifyprueba
+kubectl cp borrar/ fortifyprueba:/home/jenkins/borrar -n devops
+
+Para generar pdf en Fortify ubicarse en la ruta del archivo .fpr y ejecutar el siguiente comando
+/opt/Fortify/Fortify_SCA_and_Apps_20.2.0/bin/BIRTReportGenerator -template 'OWASP Top 10' -source code.fpr -format PDF --Version 'OWASP Top 10 2017' --UseFortifyPriorityOrder --SecurityIssueDetails -output reporte.pdf
+
+Copiar del pod forifyprueba el reporte generado en la ruta /home/jenkins/borrar/hdv-webapp-asesores-react/reporte.pdf a la ruta local
+kubectl cp fortifyprueba:/home/jenkins/borrar/hdv-webapp-asesores-react/reporte.pdf reporte.pdf -n devops
+kubectl cp fortifyprueba:/home/jenkins/ScriptFortifyValidation.sh ScriptFortifyValidation.sh -n devops
+
+Para copiar el archivo reporte.pdf de la ruta local del home del usuario root al home del usuario devops1
+cp reporte.pdf /home/devops1/reporte.pdf
+
+Para cambiar el owner root al usuario devops1 del archivo reporte.pdf
+chown devops1:devops1 reporte.pdf
+
+
+kubectl get pod -A
+kubectl get secretproviderclass -A
+kubectl describe secretproviderclass azuspccdckv -n ns-obligatorias-general
+kubectl logs secretproviderclass azuspccdckv -n ns-obligatorias-general
+
+
+
+kubectl describe pod cli-dat-ms-logs-trace-azure-java-deployment-7b5494c947-r82q7 -n ns-clientes-datosclientes
+
+
+
+https://jsp-sdlc-pr-prv-01.atlassian.net/
+https://github.com/enterprises/PorvenirAFP/sso
+https://jsp-sdlc-pr-prv-01.atlassian.net/wiki/spaces/DevOps2023/overview?homepageId=74187022
+https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
+https://graval.sharepoint.com/:x:/r/sites/GerenciaTcnicadeSoluciones/_layouts/15/doc2.aspx?sourcedoc=%7BD959172D-F280-4C9D-995D-63FE2C52F7DF%7D&file=Libro%20Verde%20Microservicios.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1
+C:\Intel\Terraform2
+
+Jira Service Management
+https://jsp-sdlc-pr-prv-01.atlassian.net/servicedesk/customer/portal/21
+
+net group /domain GS_CAZ_ZTE_GITHUB
+net group /domain GS_CAZ_SRV_BAC_CAN_GITHUB
+net user /domain por07096
+
+[DEVOPS -  GITHUB] Creación Grupo de seguridad
+
+
+Credenciales Jfrog
+admin-cloud
+Porvenir2022*
+
+Usuario genérico
+usuario: transversal 
+clave: Porvenir.2023*
+
+
+git clone https://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@github.com/PorvenirEMU/hdv-ing-sec-ns-obligatorias-comercial-k8s.git
+
+git clone https://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@github.com/PorvenirAFP/comunidaddigitalcomercial-api-management-azr.git
+
+Credenciales GitHub EMU --> github-emu
+
+
+
+
+@Library('jenkins-shared-library@main')_
+  
+node('microservicios'){
+
+    stage('Despliegue Continuo'){
+        container('azcli'){
+            sh """
+                az login --identity
+                az account set --subscription PORV-DEV
+                az aks get-credentials --resource-group PORV-PT-RG-CANALES-ELECTRONICOS --name AZUE-PV-CDC-PT-AKS-01
+            """
+            sh"kubectl get pods -n ns-ingress-pt |grep 'soa-ms-siafp-java-deployment'"
+            sh"kubectl logs soa-ms-ws-consulta-detalle-afiliacion-java-deployment-65dczwfzl -n ns-ingress-pt"			
+            
+        }
+    }
+}
+
+
+
+
+Para ingresar al ACR y poder descargar la imagen en el bastion debemos ejecutar lo siguiente en el pipeline
+az login --username devgoya@porvenir.com.co --password Porv3nir#163278
+az acr login --name azuepvgoydvpsptacr.azurecr.io --expose-token
+echo <TOKEN> | docker login -u 00000000-0000-0000-0000-000000000000 --password-stdin azuepvgoydvpsptacr.azurecr.io
+Ejemplo comando anterior
+echo eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkNPQVU6UERZSDo0SVJYOjM2SEI6TFYzUDpWNFBGOko0NzQ6SzNOSjpPS1JCOlRZQUo6NEc0Szo1Q1NEIn0.eyJqdGkiOiI1ODBlN2VhMy03MGZiLTRmOWItYTA5Mi02NTMxNTE5MmQxNmQiLCJzdWIiOiJjMzM0YzZjYi05YjMyLTQ4YjgtOTBlOS0xYmY4NTYyZmI2YTkiLCJuYmYiOjE2ODY3NzgwMzksImV4cCI6MTY4Njc4OTczOSwiaWF0IjoxNjg2Nzc4MDM5LCJpc3MiOiJBenVyZSBDb250YWluZXIgUmVnaXN0cnkiLCJhdWQiOiJhenVlcHZnb3lkdnBzcHRhY3IuYXp1cmVjci5pbyIsInZlcnNpb24iOiIxLjAiLCJyaWQiOiIwNjA5ZTk2ZGNmMGY0NDdlOWRkODJlZjFlYzgzN2VjNyIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwiYXBwaWQiOiI0MGNkMWIxYS02MzUyLTQ2ZDItYTQ3NS05NTE3ZmU2OTgzZDMiLCJ0ZW5hbnQiOiIxMGE3NjcxMi05NGY2LTQ2YTItOTE1NS0zMWJkOGI3NmY5MzciLCJwZXJtaXNzaW9ucyI6eyJBY3Rpb25zIjpbInJlYWQiLCJ3cml0ZSIsInNpZ24iLCJxdWFyYW50aW5lL3JlYWQiLCJxdWFyYW50aW5lL3dyaXRlIl0sIk5vdEFjdGlvbnMiOm51bGx9LCJyb2xlcyI6WyJBY3JJbWFnZVNpZ25lciIsIkFjclF1YXJhbnRpbmVSZWFkZXIiLCJBY3JRdWFyYW50aW5lV3JpdGVyIl19.mEU8DvWPoaEgPygIqTiexFM0RgKYYGidBX0c2eUcdUvKNp8Iu2ujFZIOTX08VtaKKOLugiVLiqKRRoHQqe16ILI_gXPlHgZVPkO5cq2vfaNPSwEdUXZh7iRsbtOG91Ub11poX1we04mGE9wMQpIDKw7S0IIZQpMIPUXfu4Vyqbb8pknpCMFBcU01l-vnKNZrznD09KERRu561TheKS8cKEoSMlZEz2p62aozwHAHs74CQ6UzUOwPUn813PESyWIQvARtdkfuRPVhMp6TiIF1lNxSa4p8aXXk5SiMKLt9PVwkmwt0hW_Qr3d_uBz5D1d7bVJuUw3v6_VUfnqa1vO3ag | docker login -u 00000000-0000-0000-0000-000000000000 --password-stdin azuepvgoydvpsptacr.azurecr.io
+
+docker pull azuepvgoydvpsptacr.azurecr.io/onb-webapp-afiliaciones-react-develop:1.52.0 
+docker images
+docker run --rm --name con_onb -it azuepvgoydvpsptacr.azurecr.io/onb-webapp-afiliaciones-react-develop:1.52.0 sh
+
+
+Email celula DevOps para notificación de correo
+arodriguezp@porvenir.com.co,mpelaezb@porvenir.com.co,por14350@porvenir.com.co,por15001@porvenir.com.co,por12233@porvenir.com.co,sossa@porvenir.com.co,POR16399@porvenir.com.co
+
+Email performance para notificación de correo
+jcarrascoc@porvenir.com.co,mmacuna@porvenir.com.co
+
+
+Actualizar el pods de jenkins-new-77f79c4cd6-4c8dc para que no se pierda la configuración de los nodes
+ df -h
+ git clone https://por15001_porvenir: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@github.com/PorvenirEMU/devops-jenkins-shared-library.git
+ kubectl get pods -n devops
+ kubectl exec -it jenkins-new-77f79c4cd6-4c8dc bash -n devops
+ kubectl cp /home/devops1/pruebas_Java17/nodes.yaml jenkins-new-77f79c4cd6-4c8dc:/var/jenkins_home/config/nodes.yaml -n devops
+
+
+
+
+
+
